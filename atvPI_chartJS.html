@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gráficos Barra e Linha</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="split">
+    <canvas class="canvas" id="chartLinha"></canvas>
+    <canvas class="canvas" id="chartBarra"></canvas>
+  </div>
+
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+  const ctxA = document.getElementById('chartBarra');
+
+  new Chart(ctxA, {
+    type: 'bar',
+    data: {
+      labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho'],
+      datasets: [{
+        label: 'Temperatura Média',
+        data: [22, 24, 27, 23, 20, 18],
+        backgroundColor: '#FF6384',
+        borderWidth: 1
+      },
+    {
+      label: 'Umidade Média',
+        data: [90, 89, 93, 87, 88, 82],
+        backgroundColor: '#36A2EB',
+        borderWidth: 1
+    }
+    ]
+    },
+    options: {
+        responsive: false,
+  maintainAspectRatio: false,
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+
+  const ctxB = document.getElementById('chartLinha');
+
+  new Chart(ctxB, {
+    type: 'line',
+    data: {
+      labels: ['12:00', '13:00', '14:00', '15:00', '16:00', '17:00'],
+      datasets: [{
+        label: 'Temperatura Média',
+        data: [30, 29, 28, 25, 23, 22],
+        borderColor: '#FF6384',
+        backgroundColor: '#FF6384',
+        borderWidth: 4
+      },
+      {
+        label: 'Umidade Média',
+        data: [80, 82, 80, 85, 80, 83],
+        backgroundColor: '#36A2EB',
+        borderColor: '#36A2EB',
+        borderWidth: 4
+      }
+      ]
+    },
+    options: {
+        responsive: false,
+  maintainAspectRatio: false,
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+</script>
+</html>

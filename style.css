@@ -1,0 +1,10 @@
+.split {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.canvas {
+    width: 700px;
+    height: 600px;
+}
